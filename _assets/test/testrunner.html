@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mocha Tests</title>
+
+    <!--meta description-->
+    <meta charset="UTF-8" />
+    <meta name="description" content="STIC I ex16 from 23 Aug. 2016">
+    <meta name="keywords" content="HTML,CSS,JS,fabric.js,GWD,mocha.js">
+    <meta name="author" content="Nathalie Borgognon">
+    <meta name="copyright" content="CC BY-NC-ND 4.0">
+
+    <!--stylesheet and icon-->
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.js"></script>
+    <script>
+        mocha.setup('bdd')
+    </script>
+
+    <!-- code to test load -->
+    <script src="../js/external/jquery/jquery.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/menuOnOff.js"></script>
+    <script src="../js/menuOnOffToogle.js"></script>
+    <script src="../js/controller.js"></script>
+    <script src="../js/drillDraw.js"></script>
+
+    <!-- test files load -->
+    <script src="controllerTest.js"></script>
+    <script src="menuTest.js"></script>
+    <script src="menuOnOffTest.js"></script>
+    <script src="menuOnOffToogleTest.js"></script>
+
+    <script>
+        mocha.run();
+    </script>
+
+    <!-- test GUI interface -->
+    <div class="tacticalBoardCommandView">
+        <input type="image" src="../img/ic_fiber_new_black_48px.svg" draggable="false" alt="nouveau" id="new" onclick="newClicked()">
+        <div class="draggable">
+            <input type="image" src="../img/ic_panorama_fish_eye_black_48px.svg" alt="joueur" id="player" onclick="playerClicked()" onmousedown="playerDragged()">
+        </div>
+        <div class="draggable">
+            <input type="image" src="../img/ic_change_history_black_48px.svg" alt="opposant" id="opponent" onclick="opponentClicked()" onmousedown="opponentDragged()">
+        </div>
+        <input type="image" src="../img/ic_trending_flat_black_48px.svg" draggable="false" alt="déplacement" id="move" onclick="moveClicked()">
+        <input type="image" src="../img/ic_arrow_pass_48px.svg" draggable="false" alt="passe" id="pass" onclick="passClicked()">
+        <input type="image" src="../img/ic_arrow_shoot_48px.svg" draggable="false" alt="shoot" id="shoot" onclick="shootClicked()">
+        <input type="image" src="../img/ic_gesture_black_48px.svg" draggable="false" alt="dessin" id="draw" onclick="drawClicked()">
+        <input type="image" src="../img/ic_format_shapes_black_48px.svg" draggable="false" alt="selection" id="select" onclick="selectClicked()">
+        <input type="image" src="../img/ic_create_black_returned_48px.svg" draggable="false" alt="suppression" id="delete" onclick="deleteClicked()">
+        <input type="image" src="../img/ic_help_outline_black_48px.svg" draggable="false" alt="aide" id="help" onclick="helpClicked()">
+        <input type="image" src="../img/ic_lightbulb_outline_black_48px.svg" draggable="false" alt="solution" id="solution" onclick="solutionClicked()">
+    </div>
+
+    <div class="tacticalBoardHelp" style="display: none;">
+        <div class="viewInCard">
+            <div class="accentLine"></div>
+            <div class="viewContent">
+                <h1>Légende des symboles</h1>
+                <ul>
+                    <li>
+                        <img src="../img/ic_fiber_new_black_48px.svg" alt="nouveau"> Créer un nouvel exercice</li>
+                    <li>
+                        <img src="../img/ic_panorama_fish_eye_black_48px.svg" alt="joueur"> Joueur Equipe A (attaque)</li>
+                    <li>
+                        <img src="../img/ic_change_history_black_48px.svg" alt="opposant"> Joueur Equipe B (défense)</li>
+                    <li>
+                        <img src="../img/ic_trending_flat_black_48px.svg" alt="déplacement"> Déplacement en avant sans la balle</li>
+                    <li>
+                        <img src="../img/ic_arrow_pass_48px.svg" alt="passe"> Passe / chemin de la balle seule</li>
+                    <li>
+                        <img src="../img/ic_arrow_shoot_48px.svg" alt="shoot"> Shoot / direction du tir</li>
+                    <li>
+                        <img src="../img/ic_gesture_black_48px.svg" alt="dessin"> Dessin libre à main levée</li>
+                    <li>
+                        <img src="../img/ic_format_shapes_black_48px.svg" alt="selection"> Sélection / déplacement / rotation des objects</li>
+                    <li>
+                        <img src="../img/ic_create_black_returned_48px.svg" alt="suppression"> Gomme / suppression des objects</li>
+                    <li>
+                        <img src="../img/ic_help_outline_black_48px.svg" alt="aide"> Aide / légende des symboles</li>
+                    <li>
+                        <img src="../img/ic_lightbulb_outline_black_48px.svg" alt="solution"> Solution / résolution de l'exercice</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

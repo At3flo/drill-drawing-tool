@@ -1,0 +1,180 @@
+/**
+ * Swiss Streethockey Association Training style
+ *
+ * @author Borgognon Nathalie
+ * @version 24 Jan. 2016
+ * @copyright CC BY-NC-ND 4.0
+ */
+
+
+/* Basic elements style */
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: #BA2C45;
+}
+
+a:hover {
+    color: #BA2C45;
+}
+
+a:link {
+    color: #BA2C45;
+}
+
+a:visited {
+    color: #BA2C45;
+}
+
+body {
+    background-color: rgb(240, 194, 196);
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+footer {
+    font-size: 8px;
+    font-style: italic;
+    padding-bottom: 34px;
+    padding-right: 34px;
+    padding-top: 17px;
+    text-align: right;
+}
+
+h1 {
+    font-family: inherit;
+    font-size: 34px;
+    font-weight: normal;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+h2 {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+
+h3 {
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 16px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+li {
+    font-family: inherit;
+    margin-bottom: 16px;
+}
+
+ol {
+    font-family: inherit;
+    font-size: 13px;
+    margin: 0;
+    padding-left: 34px;
+    padding-right: 34px;
+}
+
+p {
+    font-family: inherit;
+    font-size: 13px;
+    margin-bottom: 0;
+    margin-top: 0;
+    white-space: pre-wrap;
+}
+
+ul {
+    font-family: inherit;
+    font-size: 13px;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 34px;
+    padding-right: 34px;
+}
+
+
+/* Box classes style */
+
+.headerMast {
+    background-color: rgb(255, 255, 255);
+    background-image: url(../img/Logo_SSHA.svg);
+    background-position: 90% 15%;
+    background-repeat: no-repeat;
+    background-size: 25%;
+    color: rgb(204, 53, 57);
+    font-size: 30px;
+    height: 250px;
+    margin-bottom: -100px;
+    padding-left: 8%;
+    padding-top: 35px;
+}
+
+.viewInCard {
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    margin: 0 auto 48px auto;
+    width: 640px;
+    word-wrap: break-word;
+}
+
+.accentLine {
+    background-color: rgb(204, 53, 57);
+    height: 8px;
+}
+
+.viewContent {
+    padding: 34px;
+}
+
+.tacticalBoardCommandView {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tacticalBoardView {
+    border: none;
+    height: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 835px;
+    z-index: 1;
+}
+
+.tacticalBoardHelp {
+    display: none;
+}
+
+.tacticalBoardSolution {
+    display: none;
+}
+
+.tacticalBoardAnimation {
+    height: 380px;
+    margin-left: -81.5px;
+    margin-top: -10px;
+    transform: scale3d(0.85, 0.85, 0.85);
+}
+
+.draggable {
+    display: inline-block;
+    margin: inherit;
+    z-index: 2;
+}
