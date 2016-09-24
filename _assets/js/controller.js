@@ -31,7 +31,7 @@ class Controller {
         this._playerMenu = new MenuOnOffToogle(PLAYER, this, false, false, false, false, false);
         this._opponentMenu = new MenuOnOffToogle(OPPONENT, this, false, false, false, false, false);
 
-        this._canvas = new fabric.Canvas('drillDrawingTool');
+        this._canvas = new fabric.Canvas('drillDraw');
 
         this._isMouseDown = false;
         this._mouseDownPointer;
