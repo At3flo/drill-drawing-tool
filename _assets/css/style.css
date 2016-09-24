@@ -146,7 +146,7 @@ ul {
 
 .tacticalBoardView {
     border: none;
-    height: 390px;
+    height: 467px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -154,7 +154,7 @@ ul {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    width: 835px;
+    width: 1000px;
     z-index: 1;
 }
 
