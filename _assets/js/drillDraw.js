@@ -14,6 +14,7 @@ const NEW = "new";
 const SELECT = "select";
 const DELETE = "delete";
 const DRAW = "draw";
+const FIELD = "field";
 
 const MOVE = "move";
 const PASS = "pass";
@@ -24,6 +25,17 @@ const OPPONENT = "opponent";
 
 const SOLUTION = "solution";
 const HELP = "help";
+
+const FIELD_5VS5 = "field5vs5";
+const FIELD_4VS4 = "field4vs4";
+const FIELD_HALF = "fieldHalf";
+
+const FIELD_5VS5_IMG = '_assets/img/Hockey-Rink_4vs4.svg';
+const FIELD_4VS4_IMG = '_assets/img/Hockey-Rink.svg';
+const FIELD_HALF_IMG = '';
+
+const NEW_MESSAGE = "Etes-vous sûr de vouloir créer un nouveau dessin ?";
+const FIELD_CHANGE_MESSAGE = "Etes-vous sûr de vouloir changer de terrain ?";
 
 const BORDER_BUTTON_ON = "thin dotted gray";
 const BACKGROUNDCOLOR_BUTTON_ON = "rgb(204, 53, 57)";
@@ -126,12 +138,20 @@ function helpClicked() {
     }
 }
 
+
 //TODO: créer une function menuOnOFFToogleClicked(id) pour regrouper le code d'événement commun aux autres icônes
 /**
  * Click the "new" icon
  */
 function newClicked() {
     controller.newMenu.isClicked = true;
+}
+
+/**
+ * Click the "field" icon
+ */
+function fieldClicked() {
+    controller.fieldMenu.isClicked = true;
 }
 
 /**
