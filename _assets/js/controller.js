@@ -36,14 +36,14 @@ class Controller {
         this._isMouseDown = false;
         this._mouseDownPointer;
 
-        this._fieldStateFIELD_5VS5;
+        this._fieldState = FIELD_5VS5;
     }
 
     /**
      *  Canvas basic creation and global customization
      */
     init() {
-        this.displayDrillField('_assets/img/Hockey-Rink.svg');
+        this.displayDrillField(FIELD_5VS5_IMG);
         this._canvas.selection = false;
         this._canvas.hoverCursor = 'pointer';
     }
@@ -140,20 +140,12 @@ class Controller {
      * change the field background of the canavas
      */
     changeFieldCanevas() {
-        let confrimResponse;
-        if (this._fieldMenu.isClicked) {
-            confrimResponse = confirm(FIELD_CHANGE_MESSAGE);
-        }
-
-        if (confrimResponse) {
-            this._canvas.clear().renderAll();
-            if (this._fieldState === FIELD_5VS5) {
-                this._fieldState = FIELD_4VS4;
-                this.displayDrillField('_assets/img/Hockey-Rink_4vs4.svg');
-            } else if (this._fieldState === FIELD_4VS4) {
-                this._fieldState = FIELD_5VS5;
-                this.displayDrillField('_assets/img/Hockey-Rink.svg');
-            }
+        if (this._fieldState === FIELD_5VS5) {
+            this._fieldState = FIELD_4VS4;
+            this.displayDrillField(FIELD_4VS4_IMG);
+        } else if (this._fieldState === FIELD_4VS4) {
+            this._fieldState = FIELD_5VS5;
+            this.displayDrillField(FIELD_5VS5_IMG);
         }
     }
 

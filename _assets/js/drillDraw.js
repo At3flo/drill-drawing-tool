@@ -30,8 +30,8 @@ const FIELD_5VS5 = "field5vs5";
 const FIELD_4VS4 = "field4vs4";
 const FIELD_HALF = "fieldHalf";
 
-const FIELD_5VS5_IMG = '_assets/img/Hockey-Rink_4vs4.svg';
-const FIELD_4VS4_IMG = '_assets/img/Hockey-Rink.svg';
+const FIELD_5VS5_IMG = '_assets/img/Hockey-Rink.svg';
+const FIELD_4VS4_IMG = '_assets/img/Hockey-Rink_4vs4.svg';
 const FIELD_HALF_IMG = '';
 
 const NEW_MESSAGE = "Etes-vous sûr de vouloir créer un nouveau dessin ?";
