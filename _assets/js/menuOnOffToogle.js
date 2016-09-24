@@ -35,15 +35,20 @@ class MenuOnOffToogle extends Menu {
         if (isClicked) {
             super.controller.deselectedAllToogleIcons();
             super.controller.selectedIcon(super.iconId);
+            super.isClicked = isClicked;
+
             super.controller.areSelectableObjects(this._areSelectableObjects);
             super.controller.isDrawingModeOn(this._isDrawingModeOn);
             if (this._isClearCanvasOn) {
                 super.controller.clearCanevas();
             }
+            if (super.controller.fieldMenu.isClicked) {
+                super.controller.changeFieldCanevas();
+            }
         } else {
             super.controller.deselectedIcon(super.iconId);
+            super.isClicked = isClicked;
         }
-        super.isClicked = isClicked;
     }
 
     /**

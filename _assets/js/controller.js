@@ -19,6 +19,7 @@ class Controller {
         this._solutionMenu = new MenuOnOff(SOLUTION, this, false);
 
         this._newMenu = new MenuOnOffToogle(NEW, this, false, false, false, false, true);
+        this._fieldMenu = new MenuOnOffToogle(FIELD, this, false, false, false, false, false);
         this._selectMenu = new MenuOnOffToogle(SELECT, this, false, false, true, false, false);
         this._deleteMenu = new MenuOnOffToogle(DELETE, this, false, false, true, false, false);
         this._drawMenu = new MenuOnOffToogle(DRAW, this, false, false, false, true, false);
@@ -30,17 +31,18 @@ class Controller {
         this._playerMenu = new MenuOnOffToogle(PLAYER, this, false, false, false, false, false);
         this._opponentMenu = new MenuOnOffToogle(OPPONENT, this, false, false, false, false, false);
 
-        this._canvas = new fabric.Canvas('drillDraw');
+        this._canvas = new fabric.Canvas('drillDrawingTool');
 
         this._isMouseDown = false;
         this._mouseDownPointer;
+
+        this._fieldStateFIELD_5VS5;
     }
 
     /**
      *  Canvas basic creation and global customization
      */
     init() {
-
         this.displayDrillField('_assets/img/Hockey-Rink.svg');
         this._canvas.selection = false;
         this._canvas.hoverCursor = 'pointer';
@@ -102,6 +104,7 @@ class Controller {
         this._selectMenu.isClicked = false;
         this._deleteMenu.isClicked = false;
         this._drawMenu.isClicked = false;
+        this._fieldMenu.isClicked = false;
 
         this._moveMenu.isClicked = false;
         this._passMenu.isClicked = false;
@@ -123,7 +126,35 @@ class Controller {
      * Clear the canavas with all draw elements
      */
     clearCanevas() {
-        this._canvas.clear().renderAll();
+        let confrimResponse;
+        if (this._newMenu.isClicked) {
+            confrimResponse = confirm(NEW_MESSAGE);
+        }
+
+        if (confrimResponse) {
+            this._canvas.clear().renderAll();
+        }
+    }
+
+    /**
+     * change the field background of the canavas
+     */
+    changeFieldCanevas() {
+        let confrimResponse;
+        if (this._fieldMenu.isClicked) {
+            confrimResponse = confirm(FIELD_CHANGE_MESSAGE);
+        }
+
+        if (confrimResponse) {
+            this._canvas.clear().renderAll();
+            if (this._fieldState === FIELD_5VS5) {
+                this._fieldState = FIELD_4VS4;
+                this.displayDrillField('_assets/img/Hockey-Rink_4vs4.svg');
+            } else if (this._fieldState === FIELD_4VS4) {
+                this._fieldState = FIELD_5VS5;
+                this.displayDrillField('_assets/img/Hockey-Rink.svg');
+            }
+        }
     }
 
     /**
@@ -427,6 +458,13 @@ class Controller {
      */
     get drawMenu() {
         return this._drawMenu;
+    }
+
+    /**
+     * Gets the fiel menu instance
+     */
+    get fieldMenu() {
+        return this._fieldMenu;
     }
 
     /**
