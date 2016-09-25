@@ -72,6 +72,17 @@ img {
     vertical-align: middle;
 }
 
+input[type="color"] {
+  background: black;
+  cursor: pointer;
+  width:40px;
+  height:40px;
+  vertical-align:middle;
+}
+input[type="image"] {
+vertical-align: middle;
+}
+
 li {
     font-family: inherit;
     margin-bottom: 16px;
