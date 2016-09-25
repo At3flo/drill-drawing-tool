@@ -28,11 +28,13 @@ const HELP = "help";
 
 const FIELD_5VS5 = "field5vs5";
 const FIELD_4VS4 = "field4vs4";
-const FIELD_HALF = "fieldHalf";
+const FIELD_5VS5_HALF = "field5vs5Half";
+const FIELD_4VS4_HALF = "field4vs4Half";
 
 const FIELD_5VS5_IMG = '_assets/img/Hockey-Rink.svg';
 const FIELD_4VS4_IMG = '_assets/img/Hockey-Rink_4vs4.svg';
-const FIELD_HALF_IMG = '';
+const FIELD_5VS5_HALF_IMG = '_assets/img/Hockey-Rink_5vs5-Half.svg';
+const FIELD_4VS4_HALF_IMG = '_assets/img/Hockey-Rink_4vs4-Half.svg';
 
 const NEW_MESSAGE = "Etes-vous sûr de vouloir créer un nouveau dessin ?";
 const FIELD_CHANGE_MESSAGE = "Etes-vous sûr de vouloir changer de terrain ?";
