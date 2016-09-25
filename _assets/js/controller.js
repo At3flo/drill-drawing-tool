@@ -147,10 +147,22 @@ class Controller {
                 break;
             case FIELD_4VS4:
                 this._fieldState = FIELD_4VS4_HALF;
+                document.getElementById("tacticalBoardView").setAttribute("style", "width: 500px; height: 467px;");
+                document.getElementById("drillDraw").setAttribute("style", "width: 500px; height: 467px;");
+                this._canvas.setHeight(467);
+                this._canvas.setWidth(500);
+                this._canvas.renderAll();
+                this._canvas.calcOffset();
                 this.displayDrillField(FIELD_4VS4_HALF_IMG);
                 break;
             case FIELD_4VS4_HALF:
                 this._fieldState = FIELD_5VS5;
+                document.getElementById("tacticalBoardView").setAttribute("style", "width: 1000px; height: 467px;");
+                document.getElementById("drillDraw").setAttribute("style", "width: 1000px; height: 467px;");
+                this._canvas.setHeight(467);
+                this._canvas.setWidth(1000);
+                this._canvas.renderAll();
+                this._canvas.calcOffset();
                 this.displayDrillField(FIELD_5VS5_IMG);
                 break;
             default:
