@@ -140,12 +140,22 @@ class Controller {
      * change the field background of the canavas
      */
     changeFieldCanevas() {
-        if (this._fieldState === FIELD_5VS5) {
-            this._fieldState = FIELD_4VS4;
-            this.displayDrillField(FIELD_4VS4_IMG);
-        } else if (this._fieldState === FIELD_4VS4) {
-            this._fieldState = FIELD_5VS5;
-            this.displayDrillField(FIELD_5VS5_IMG);
+        switch (this._fieldState) {
+            case FIELD_5VS5:
+                this._fieldState = FIELD_4VS4;
+                this.displayDrillField(FIELD_4VS4_IMG);
+                break;
+            case FIELD_4VS4:
+                this._fieldState = FIELD_4VS4_HALF;
+                this.displayDrillField(FIELD_4VS4_HALF_IMG);
+                break;
+            case FIELD_4VS4_HALF:
+                this._fieldState = FIELD_5VS5;
+                this.displayDrillField(FIELD_5VS5_IMG);
+                break;
+            default:
+                this._fieldState = FIELD_5VS5;
+                this.displayDrillField(FIELD_5VS5_IMG);
         }
     }
 
@@ -350,7 +360,7 @@ class Controller {
         let pointer = this._canvas.getPointer(mouseEvent);
         let canvas = this._canvas;
         //let player;
-        fabric.loadSVGFromURL(URL, function (objects, options) {
+        fabric.loadSVGFromURL(URL, function(objects, options) {
             let player = fabric.util.groupSVGElements(objects, options);
             player.set({
                 left: pointer.x,
