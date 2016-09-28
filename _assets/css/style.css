@@ -73,14 +73,18 @@ img {
 }
 
 input[type="color"] {
-  background: black;
-  cursor: pointer;
-  width:40px;
-  height:40px;
-  vertical-align:middle;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-style: solid;
+    border-width: 4px;
+    cursor: pointer;
+    height: 36px;
+    vertical-align: middle;
+    width: 36px;
 }
+
 input[type="image"] {
-vertical-align: middle;
+    vertical-align: middle;
 }
 
 li {
